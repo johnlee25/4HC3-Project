@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {HashRouter  as Router,Route,Link,NavLink} from 'react-router-dom';
 
 function App() {
   return (
