@@ -1,0 +1,20 @@
+.folder{
+    background-color: #FEE9E1;
+    min-height: 100vh;
+    margin:0px;
+    padding:0px;
+}
+
+.vline{
+    border-right:2px solid #000;
+    min-height:500px;
+}
+
+.files{
+    margin: 20px 0px;
+}
+
+.upload{
+    float: right;
+    margin: 0px 20px;
+}
