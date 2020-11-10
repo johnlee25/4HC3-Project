@@ -5,16 +5,54 @@
     padding:0px;
 }
 
-.vline{
+/* .vline{
     border-right:2px solid #000;
     min-height:500px;
+} */
+
+.sort{
+    text-align: center;
+}
+
+.size{
+    font-size: 18px;
 }
 
 .files{
     margin: 20px 0px;
+    text-align: center;
 }
 
 .upload{
-    float: right;
-    margin: 0px 20px;
+    text-align: center;
+}
+
+.table{
+    width:100%;
+    background-color: lightgray;
+    margin-top:15px;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0px;
+}
+
+li:nth-child(even){
+    background-color: white;
+}
+
+li{
+    padding:5px 10px;
+}
+
+.pdf{
+    margin: 20px 00px;
+}
+
+.docHead{
+    text-align: center;
+    width: 700px;
+    font-size: 20px;
+    font-weight: bold;
 }
