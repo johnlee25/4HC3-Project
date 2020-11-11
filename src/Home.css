@@ -2,3 +2,39 @@
     background-color: #FEE9E1;
     min-height: 100vh;
 }
+
+.inputbox{
+    width:100%;
+    padding-left: 100px;
+}
+
+.heading{
+    font-size: 18px;
+    padding: 80px 0px 10px 100px;
+}
+
+#err{
+    color:rgb(255, 30, 0);
+    font-size: 20px;
+    display: none;
+  }
+
+  .list {
+    display: inline-block;
+    width: 8%;
+    margin: 20px 100px;
+    text-align: center;
+}
+
+.classNa{
+    font-size: 20px;
+
+}
+
+.linking{
+    color:black;
+}
+
+.upcoming{
+    padding: 80px 0px 10px 100px;
+}

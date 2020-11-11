@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Folder.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloudUploadAlt, faSortAmountDown, faExpandAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCloudUploadAlt, faSortAmountDown, faSearchPlus } from '@fortawesome/free-solid-svg-icons';
 import { Col, Row, Container, ListGroup, Tab } from 'react-bootstrap';
 import test1 from './pdf/TEST1.pdf';
 import test2 from './pdf/TEST2.pdf';
@@ -16,7 +16,13 @@ import readmepdf from './pdf/README.pdf';
 class Folder extends Component {
     constructor(props) {
         super(props);
-        this.state = { doc: test1 }
+    }
+    upload() {
+        document.getElementById("selectImage").click()
+      }
+
+    test(){
+        console.log("test");
     }
 
     render() {
@@ -41,7 +47,10 @@ class Folder extends Component {
                                         <Col></Col>
                                         <Col>
                                             <div class="upload">
-                                                <FontAwesomeIcon icon={faCloudUploadAlt} size="2x" />
+                                                <input type="file"
+                                                    id="selectImage"
+                                                    style={{ display: 'none' }} />
+                                                <b><span onClick={this.upload}>UPLOAD&nbsp;</span></b><FontAwesomeIcon icon={faCloudUploadAlt} size="2x" onClick={this.upload}/>
                                             </div>
                                         </Col>
                                     </Row>
@@ -73,43 +82,43 @@ class Folder extends Component {
                                     <Tab.Content>
                                         <Tab.Pane eventKey="#link1">
                                             <div class="docHead">Document Preview &nbsp;
-                                                <a href={test1} target='_blank'><FontAwesomeIcon icon={faExpandAlt} size="lg" /></a>
+                                                <a href={test1} target='_blank'><FontAwesomeIcon icon={faSearchPlus} size="lg" /></a>
                                             </div>
                                             <embed src={test1} width="700px" height="700px" />
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="#link2">
-                                        <div class="docHead">Document Preview &nbsp;
-                                                <a href={test2} target='_blank'><FontAwesomeIcon icon={faExpandAlt} size="lg" /></a>
+                                            <div class="docHead">Document Preview &nbsp;
+                                                <a href={test2} target='_blank'><FontAwesomeIcon icon={faSearchPlus} size="lg" /></a>
                                             </div>
                                             <embed src={test2} width="700px" height="700px" />
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="#link3">
-                                        <div class="docHead">Document Preview &nbsp;
-                                                <a href={test3} target='_blank'><FontAwesomeIcon icon={faExpandAlt} size="lg" /></a>
+                                            <div class="docHead">Document Preview &nbsp;
+                                                <a href={test3} target='_blank'><FontAwesomeIcon icon={faSearchPlus} size="lg" /></a>
                                             </div>
                                             <embed src={test3} width="700px" height="700px" />
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="#link4">
-                                        <div class="docHead">Document Preview &nbsp;
-                                                <a href={test4} target='_blank'><FontAwesomeIcon icon={faExpandAlt} size="lg" /></a>
+                                            <div class="docHead">Document Preview &nbsp;
+                                                <a href={test4} target='_blank'><FontAwesomeIcon icon={faSearchPlus} size="lg" /></a>
                                             </div>
                                             <embed src={test4} width="700px" height="700px" />
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="#link5">
-                                        <div class="docHead">Document Preview &nbsp;
-                                                <a href={test5} target='_blank'><FontAwesomeIcon icon={faExpandAlt} size="lg" /></a>
+                                            <div class="docHead">Document Preview &nbsp;
+                                                <a href={test5} target='_blank'><FontAwesomeIcon icon={faSearchPlus} size="lg" /></a>
                                             </div>
                                             <embed src={test5} width="700px" height="700px" />
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="#link6">
-                                        <div class="docHead">Document Preview &nbsp;
-                                                <a href={readmepdf} target='_blank'><FontAwesomeIcon icon={faExpandAlt} size="lg" /></a>
+                                            <div class="docHead">Document Preview &nbsp;
+                                                <a href={readmepdf} target='_blank'><FontAwesomeIcon icon={faSearchPlus} size="lg" /></a>
                                             </div>
                                             <embed src={readmepdf} width="700px" height="700px" />
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="#link7">
-                                        <div class="docHead">Document Preview &nbsp;
-                                                <a href={test6} target='_blank'><FontAwesomeIcon icon={faExpandAlt} size="lg" /></a>
+                                            <div class="docHead">Document Preview &nbsp;
+                                                <a href={test6} target='_blank'><FontAwesomeIcon icon={faSearchPlus} size="lg" /></a>
                                             </div>
                                             <embed src={test6} width="700px" height="700px" />
                                         </Tab.Pane>
