@@ -1,60 +1,86 @@
 import React from 'react';
 import './App.css';
 import Home from './Home.js';
-
+import Course from './Course.js';
 import Folder from './Folder.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleLeft  } from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { Navbar, Nav, Row, Col } from 'react-bootstrap';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { heading: "Folder", heading2:"Folder", headingprev:"" }
+    this.state = { heading: "Home", heading2: "Home", headingprev: "" }
 
-    this.startup=this.startup.bind(this);
+    this.startup = this.startup.bind(this);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     window.addEventListener('load', this.startup);
   }
 
-  startup(){
-    var idl=window.location.href.split('/#/')[1];
-    this.setState({
-      heading: idl,
-      heading2: idl,
-    });
+  startup() {
+    var idl = window.location.href.split('/#/')[1];
+    if (idl === "Folder") {
+      this.setState({
+        heading: idl,
+        heading2: idl,
+        headingprev: "Course"
+      });
+    }
+    else if (idl === "4HC3") {
+      this.setState({
+        heading: idl,
+        heading2: idl,
+        headingprev: ""
+      });
+    }
+    else {
+      this.setState({
+        heading: "Home",
+        heading2: "Home",
+        headingprev: ""
+      });
+    }
   }
 
-  home(){
+  home() {
     this.setState({
       heading: "Home",
       heading2: "/",
-      headingprev:""
+      headingprev: ""
     });
   }
 
-  back(){
+  back() {
     console.log(this.state.heading);
-    if(this.state.heading==="Folder"){
+    if (this.state.heading === "Folder") {
       this.setState({
-        heading: "Course",
-        heading2: "Course",
-        headingprev:"/"
+        heading: "4HC3",
+        heading2: "4HC3",
+        headingprev: "/"
       });
     }
-    if(this.state.heading==="Course"){
+    if (this.state.heading === "4HC3") {
       this.setState({
-        heading: "",
+        heading: "Home",
         heading2: "/",
-        headingprev:""
+        headingprev: ""
       });
     }
     console.log(this.state.heading);
 
+  }
+
+  toCourse() {
+    this.setState({
+      heading: "Course",
+      heading2: "Course",
+      headingprev: ""
+    });
+    console.log(this.props.heading);
   }
 
   render() {
@@ -62,21 +88,21 @@ class App extends React.Component {
       <Router>
         <Navbar variant="temp" className="headbg" >
           <Nav>
-          <Row>
-            <Col>
-              <Navbar.Brand as={Link} to="/" onClick={this.home.bind(this)}>CourseAlly</Navbar.Brand>
-            </Col>
+            <Row>
               <Col>
-              <Nav.Link as={Link} >{this.state.heading}</Nav.Link>
+                <Navbar.Brand as={Link} to="/" onClick={this.home.bind(this)}>CourseAlly</Navbar.Brand>
               </Col>
               <Col>
-                <Nav.Link as={Link} to={this.state.headingprev} onClick={this.back.bind(this)}><FontAwesomeIcon icon={faAngleLeft} size="lg" onClick={this.back.bind(this)}/> Back</Nav.Link>
+                <Nav.Link as={Link} >{this.state.heading}</Nav.Link>
               </Col>
-          </Row>
+              <Col>
+                <Nav.Link as={Link} to={this.state.headingprev} onClick={this.back.bind(this)}><FontAwesomeIcon icon={faAngleLeft} size="lg" onClick={this.back.bind(this)} /> Back</Nav.Link>
+              </Col>
+            </Row>
           </Nav>
         </Navbar>
-        <Route exact path="/" component={Home} />
-        
+        <Route exact path="/" exact render={(props) => <Home  {...props} heading={this.state.heading} sendState={this.toCourse.bind(this)}/>} />
+        <Route path="/4HC3" component={Course} />
         <Route path="/Folder" component={Folder} />
       </Router >
     );

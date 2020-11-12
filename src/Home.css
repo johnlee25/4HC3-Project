@@ -1,40 +1,39 @@
-.home{
+.home {
     background-color: #FEE9E1;
     min-height: 100vh;
 }
 
-.inputbox{
-    width:100%;
+.inputbox {
+    width: 100%;
     padding-left: 100px;
 }
 
-.heading{
+.heading {
     font-size: 18px;
     padding: 80px 0px 10px 100px;
 }
 
-#err{
-    color:rgb(255, 30, 0);
+#err {
+    color: rgb(255, 30, 0);
     font-size: 20px;
     display: none;
-  }
+}
 
-  .list {
+.list {
     display: inline-block;
-    width: 8%;
+    width: 15%;
     margin: 20px 100px;
     text-align: center;
 }
 
-.classNa{
+.classNa {
     font-size: 20px;
-
 }
 
-.linking{
-    color:black;
+.linking {
+    color: black;
 }
 
-.upcoming{
+.upcoming {
     padding: 80px 0px 10px 100px;
 }
