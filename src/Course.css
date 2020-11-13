@@ -1,7 +1,46 @@
-.cal{
-    min-height: 500px;
+.Course {
+    background-color: #FEE9E1;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
 }
 
-.rbc-btn-group{
-    visibility: hidden;
+.cal {
+    min-height: 500px;
+    width: 100%;
+    background-color: white;
+
+}
+
+.rbc-btn-group {
+    display: none;
+}
+
+.upbtn {
+    padding: 50px 0px 100px 50px;
+    text-align: center;
+}
+
+.list {
+    display: inline-block;
+    width: 14%;
+    margin: 20px 50px;
+    text-align: center;
+}
+
+.classNa {
+    font-size: 20px;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.linking2{
+    color: black;
+    padding-top: 70px;
 }

@@ -23,11 +23,11 @@ class App extends React.Component {
 
   startup() {
     var idl = window.location.href.split('/#/')[1];
-    if (idl === "Folder") {
+    if (idl === "Notes") {
       this.setState({
         heading: idl,
         heading2: idl,
-        headingprev: "Course"
+        headingprev: "4HC3"
       });
     }
     else if (idl === "4HC3") {
@@ -56,7 +56,7 @@ class App extends React.Component {
 
   back() {
     console.log(this.state.heading);
-    if (this.state.heading === "Folder") {
+    if (this.state.heading === "Notes") {
       this.setState({
         heading: "4HC3",
         heading2: "4HC3",
@@ -76,9 +76,18 @@ class App extends React.Component {
 
   toCourse() {
     this.setState({
-      heading: "Course",
-      heading2: "Course",
+      heading: "4HC3",
+      heading2: "4HC3",
       headingprev: ""
+    });
+    console.log(this.props.heading);
+  }
+
+  toFolder() {
+    this.setState({
+      heading: "Notes",
+      heading2: "Notes",
+      headingprev: "4HC3"
     });
     console.log(this.props.heading);
   }
@@ -102,8 +111,8 @@ class App extends React.Component {
           </Nav>
         </Navbar>
         <Route exact path="/" exact render={(props) => <Home  {...props} heading={this.state.heading} sendState={this.toCourse.bind(this)}/>} />
-        <Route path="/4HC3" component={Course} />
-        <Route path="/Folder" component={Folder} />
+        <Route path="/4HC3" exact render={(props) => <Course  {...props} sendFolder={this.toFolder.bind(this)}/>} />
+        <Route path="/Notes" component={Folder} />
       </Router >
     );
   }

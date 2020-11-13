@@ -17,13 +17,10 @@ class Folder extends Component {
     constructor(props) {
         super(props);
     }
+    
     upload() {
         document.getElementById("selectImage").click()
       }
-
-    test(){
-        console.log("test");
-    }
 
     render() {
         return (
@@ -69,8 +66,6 @@ class Folder extends Component {
                                                     <ListGroup.Item as="li" action variant="secondary" href="#link6" >thermals 6.pdf</ListGroup.Item>
                                                     <ListGroup.Item as="li" action variant="secondary" href="#link7" >thermals - jjs notes.pdf</ListGroup.Item>
                                                 </ListGroup>
-
-
                                             </div>
                                         </Col>
                                         <Col xs="1"></Col>
