@@ -84,22 +84,23 @@ class Course extends Component {
                             <Router>
                                 <Link to="Notes" class="linking2" >
                                     <div class="list">
-                                        <FontAwesomeIcon icon={faCopy} size="8x" onClick={this.toFolder.bind(this)}/>
+                                        <FontAwesomeIcon icon={faCopy} size="8x" onClick={this.toFolder.bind(this)} />
                                         <div class="classNa" onClick={this.toFolder.bind(this)}><b>Notes</b></div>
                                     </div>
-                                    <div class="list">
-                                        <FontAwesomeIcon icon={faBook} size="8x" onClick={this.toFolder.bind(this)}/>
-                                        <div class="classNa" onClick={this.toFolder.bind(this)}><b>Homework</b></div>
-                                    </div>
-                                    <div class="list">
-                                        <FontAwesomeIcon icon={faFileAlt} size="8x" onClick={this.toFolder.bind(this)}/>
-                                        <div class="classNa" onClick={this.toFolder.bind(this)}><b>Previous Tests</b></div>
-                                    </div>
-                                    <div class="list">
-                                        <FontAwesomeIcon icon={faChalkboardTeacher} size="8x" onClick={this.toFolder.bind(this)}/>
-                                        <div class="classNa" onClick={this.toFolder.bind(this)}><b>Lectures</b></div>
-                                    </div>
                                 </Link>
+                                <div class="list">
+                                    <FontAwesomeIcon icon={faBook} size="8x" />
+                                    <div class="classNa" ><b>Homework</b></div>
+                                </div>
+                                <div class="list">
+                                    <FontAwesomeIcon icon={faFileAlt} size="8x" />
+                                    <div class="classNa" ><b>Previous Tests</b></div>
+                                </div>
+                                <div class="list">
+                                    <FontAwesomeIcon icon={faChalkboardTeacher} size="8x" />
+                                    <div class="classNa"><b>Lectures</b></div>
+                                </div>
+
                             </Router>
                         </Row>
                         <Row class="row no-gutters">
@@ -112,7 +113,7 @@ class Course extends Component {
                         </Row>
                     </Col>
                     <Col xs="4">
-                    <div class="upcoming">
+                        <div class="upcoming">
                             <div class="todaysEvents"><b>Upcoming Events</b></div>
                             <div class="upcal">
                                 <Calendar

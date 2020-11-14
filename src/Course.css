@@ -25,7 +25,7 @@
 .list {
     display: inline-block;
     width: 14%;
-    margin: 20px 50px;
+    margin: 90px 50px;
     text-align: center;
 }
 
@@ -42,5 +42,4 @@
 
 .linking2{
     color: black;
-    padding-top: 70px;
 }
